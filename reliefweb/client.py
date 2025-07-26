@@ -106,13 +106,13 @@ class ReliefWebClient:
         payload = self._build_payload(filters, fields, sort, limit, offset, presets)
         return self._request('blog', payload)
 
-    def get_books(self, filters=None, fields=None, sort=None, limit=10, offset=0, presets=None):
+    def get_book(self, filters=None, fields=None, sort=None, limit=10, offset=0, presets=None):
         """
-        Fetch books from ReliefWeb API.
+        Fetch book from ReliefWeb API.
         Args and returns same as get_reports.
         """
         payload = self._build_payload(filters, fields, sort, limit, offset, presets)
-        return self._request('books', payload)
+        return self._request('book', payload)
 
     def get_references(self, filters=None, fields=None, sort=None, limit=10, offset=0, presets=None):
         """

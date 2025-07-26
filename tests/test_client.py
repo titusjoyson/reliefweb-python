@@ -40,15 +40,15 @@ class TestReliefWebClient(unittest.TestCase):
         self.assertIn('data', result)
         self.assertIsInstance(result['data'], list)
 
-    def test_get_books(self):
-        result = self.client.get_books(limit=1)
+    def test_get_book(self):
+        result = self.client.get_book(limit=1)
         self.assertIn('data', result)
         self.assertIsInstance(result['data'], list)
 
     def test_get_references(self):
         result = self.client.get_references(limit=1)
         self.assertIn('data', result)
-        self.assertIsInstance(result['data'], list)
+        self.assertIsInstance(result['data'], dict)
 
 if __name__ == '__main__':
     unittest.main()
