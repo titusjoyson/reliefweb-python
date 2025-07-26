@@ -8,13 +8,15 @@ class ReliefWebClient:
     """
     BASE_URL = 'https://api.reliefweb.int/v1/'
 
-    def __init__(self, api_key=None):
+    def __init__(self, api_key=None, appname="reliefweb-python-client"):
         """
         Initialize the ReliefWebClient.
         Args:
             api_key (str, optional): API key for authentication (if required).
+            appname (str, optional): App name to send as required by ReliefWeb API.
         """
         self.api_key = api_key
+        self.appname = appname
         self.session = requests.Session()
         if api_key:
             self.session.headers.update({'Authorization': f'Bearer {api_key}'})
@@ -29,7 +31,9 @@ class ReliefWebClient:
             dict: Parsed JSON response.
         """
         url = self.BASE_URL + endpoint
-        response = self.session.post(url, json=payload or {})
+        # Ensure appname is always included as a query parameter
+        params = {"appname": self.appname}
+        response = self.session.post(url, params=params, json=payload or {})
         try:
             response.raise_for_status()
         except requests.HTTPError as e:

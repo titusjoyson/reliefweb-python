@@ -3,7 +3,7 @@ from reliefweb.client import ReliefWebClient
 
 class TestReliefWebClient(unittest.TestCase):
     def setUp(self):
-        self.client = ReliefWebClient()
+        self.client = ReliefWebClient(appname="reliefweb-python-client-GA-runner-test")
 
     def test_get_reports(self):
         result = self.client.get_reports(limit=1)
