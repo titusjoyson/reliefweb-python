@@ -20,5 +20,35 @@ class TestReliefWebClient(unittest.TestCase):
         self.assertIn('data', result)
         self.assertIsInstance(result['data'], list)
 
+    def test_get_disasters(self):
+        result = self.client.get_disasters(limit=1)
+        self.assertIn('data', result)
+        self.assertIsInstance(result['data'], list)
+
+    def test_get_sources(self):
+        result = self.client.get_sources(limit=1)
+        self.assertIn('data', result)
+        self.assertIsInstance(result['data'], list)
+
+    def test_get_countries(self):
+        result = self.client.get_countries(limit=1)
+        self.assertIn('data', result)
+        self.assertIsInstance(result['data'], list)
+
+    def test_get_blog(self):
+        result = self.client.get_blog(limit=1)
+        self.assertIn('data', result)
+        self.assertIsInstance(result['data'], list)
+
+    def test_get_books(self):
+        result = self.client.get_books(limit=1)
+        self.assertIn('data', result)
+        self.assertIsInstance(result['data'], list)
+
+    def test_get_references(self):
+        result = self.client.get_references(limit=1)
+        self.assertIn('data', result)
+        self.assertIsInstance(result['data'], list)
+
 if __name__ == '__main__':
     unittest.main()

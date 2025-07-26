@@ -44,6 +44,18 @@ training = client.get_training(
     limit=5
 )
 print("Training:", training)
+
+# Fetch blog
+blog = client.get_blog(limit=5)
+print("Blog:", blog)
+
+# Fetch books
+books = client.get_books(limit=5)
+print("Books:", books)
+
+# Fetch references
+references = client.get_references(limit=5)
+print("References:", references)
 ```
 
 ### ReliefWebClient Methods
@@ -64,6 +76,18 @@ Fetch jobs from ReliefWeb API.
 
 #### `get_training(filters=None, fields=None, sort=None, limit=10, offset=0, presets=None)`
 Fetch training events from ReliefWeb API.
+- Parameters and return value are the same as `get_reports`.
+
+#### `get_blog(filters=None, fields=None, sort=None, limit=10, offset=0, presets=None)`
+Fetch blog posts from ReliefWeb API.
+- Parameters and return value are the same as `get_reports`.
+
+#### `get_books(filters=None, fields=None, sort=None, limit=10, offset=0, presets=None)`
+Fetch books from ReliefWeb API.
+- Parameters and return value are the same as `get_reports`.
+
+#### `get_references(filters=None, fields=None, sort=None, limit=10, offset=0, presets=None)`
+Fetch references from ReliefWeb API.
 - Parameters and return value are the same as `get_reports`.
 
 #### Constructor: `ReliefWebClient(api_key=None)`

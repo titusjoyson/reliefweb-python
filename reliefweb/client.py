@@ -73,6 +73,54 @@ class ReliefWebClient:
         """
         payload = self._build_payload(filters, fields, sort, limit, offset, presets)
         return self._request('training', payload)
+    
+    def get_disasters(self, filters=None, fields=None, sort=None, limit=10, offset=0, presets=None):
+        """
+        Fetch disasters from ReliefWeb API.
+        Args and returns same as get_reports.
+        """
+        payload = self._build_payload(filters, fields, sort, limit, offset, presets)
+        return self._request('disasters', payload)
+
+    def get_sources(self, filters=None, fields=None, sort=None, limit=10, offset=0, presets=None):
+        """
+        Fetch sources from ReliefWeb API.
+        Args and returns same as get_reports.
+        """
+        payload = self._build_payload(filters, fields, sort, limit, offset, presets)
+        return self._request('sources', payload)
+
+    def get_countries(self, filters=None, fields=None, sort=None, limit=10, offset=0, presets=None):
+        """
+        Fetch countries from ReliefWeb API.
+        Args and returns same as get_reports.
+        """
+        payload = self._build_payload(filters, fields, sort, limit, offset, presets)
+        return self._request('countries', payload)
+
+    def get_blog(self, filters=None, fields=None, sort=None, limit=10, offset=0, presets=None):
+        """
+        Fetch blog posts from ReliefWeb API.
+        Args and returns same as get_reports.
+        """
+        payload = self._build_payload(filters, fields, sort, limit, offset, presets)
+        return self._request('blog', payload)
+
+    def get_books(self, filters=None, fields=None, sort=None, limit=10, offset=0, presets=None):
+        """
+        Fetch books from ReliefWeb API.
+        Args and returns same as get_reports.
+        """
+        payload = self._build_payload(filters, fields, sort, limit, offset, presets)
+        return self._request('books', payload)
+
+    def get_references(self, filters=None, fields=None, sort=None, limit=10, offset=0, presets=None):
+        """
+        Fetch references from ReliefWeb API.
+        Args and returns same as get_reports.
+        """
+        payload = self._build_payload(filters, fields, sort, limit, offset, presets)
+        return self._request('references', payload)
 
     def _build_payload(self, filters, fields, sort, limit, offset, presets):
         """
